@@ -1,6 +1,6 @@
 A Food Delivery App built with Flutter by following the MVC Architecture.
 
-<img src="https://camo.githubusercontent.com/..." data-canonical-src="https://user-images.githubusercontent.com/75217894/163344575-0d087984-0867-4539-a02b-db81956becfb.png" width="250" height="250" />
+<img src="https://user-images.githubusercontent.com/75217894/163344575-0d087984-0867-4539-a02b-db81956becfb.png" width="250" height="250" />
 
 <!-- ![1](https://user-images.githubusercontent.com/75217894/163344575-0d087984-0867-4539-a02b-db81956becfb.png) 
 
