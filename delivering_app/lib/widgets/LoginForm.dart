@@ -7,6 +7,20 @@ import 'package:flutter/material.dart';
 
 import 'constants.dart';
 
+class EmailFieldValidator {
+  static String? validate(String? value) {
+    if (value!.isEmpty) {
+      return 'Email can\'t be empty';
+    }
+    if (!RegExp(
+            r"^([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)$")
+        .hasMatch(value)) {
+      return 'Please enter a valid Email';
+    }
+    return null;
+  }
+}
+
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
 
@@ -28,7 +42,9 @@ class _LoginFormState extends State<LoginForm> {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: defaultPadding*3,),
+          padding: const EdgeInsets.symmetric(
+            horizontal: defaultPadding * 3,
+          ),
           child: Column(
             children: [
               const Spacer(
@@ -39,17 +55,7 @@ class _LoginFormState extends State<LoginForm> {
                 child: TextFormField(
                   controller: emailText,
                   keyboardType: TextInputType.text,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter Email';
-                    }
-                    if (!RegExp(
-                            r"^([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)$")
-                        .hasMatch(value)) {
-                      return 'Please enter a valid Email';
-                    }
-                    return null;
-                  },
+                  validator: EmailFieldValidator.validate,
                   onSaved: (value) {
                     if (value == null || value.isEmpty) {
                       email = value.toString();
