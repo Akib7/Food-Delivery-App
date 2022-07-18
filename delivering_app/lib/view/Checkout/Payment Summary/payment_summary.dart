@@ -69,7 +69,15 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                 ? Get.to(
                     () => MyRazorpay(),
                   )
-                : Container();
+                : Scaffold(
+                    body: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                            'Order placed successfully.\nIt will be delivered to you as soon as possible'),
+                      ],
+                    ),
+                  );
           },
           color: primaryColour,
           textColor: Colors.white,
