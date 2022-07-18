@@ -112,6 +112,9 @@ class Description extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Icon(Icons.phone, color: Colors.yellow[600]),
+                        SizedBox(
+                          width: 25,
+                        ),
                         Container(
                           width: width / 1.3,
                           height: height / 14,

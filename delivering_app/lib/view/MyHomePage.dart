@@ -1,6 +1,10 @@
 import 'package:delivering_app/controller/Providers/productProvider.dart';
 import 'package:delivering_app/controller/Providers/user_provider.dart';
 import 'package:delivering_app/config/constants.dart';
+import 'package:delivering_app/models/CrimsonCup.dart';
+import 'package:delivering_app/models/FoodContainer.dart';
+import 'package:delivering_app/models/KFC.dart';
+import 'package:delivering_app/models/MadChef.dart';
 
 import 'package:delivering_app/view/Search/search.dart';
 import 'package:delivering_app/view/home/drawer.dart';
@@ -29,42 +33,48 @@ class _MyHomePageState extends State<MyHomePage> {
 
   bool liked = false;
 
-  Widget popular(String image, double horizontal, double vertical) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: horizontal),
-      child: Stack(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Image(
-              height: 140,
-              width: 150,
-              fit: BoxFit.cover,
-              image: AssetImage(image),
-            ),
-          ),
-          Positioned(
-            top: 10,
-            right: 10,
-            // alignment: Alignment.topLeft,
-            child: Container(
-              height: 35,
-              width: 35,
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.circular(70),
+  Widget popular(
+      String image, double horizontal, double vertical, Widget page) {
+    return GestureDetector(
+      onTap: () {
+        Get.to(() => page);
+      },
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: horizontal),
+        child: Stack(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image(
+                height: 140,
+                width: 150,
+                fit: BoxFit.cover,
+                image: AssetImage(image),
               ),
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.favorite,
-                  color: Colors.white,
-                  size: 20,
+            ),
+            Positioned(
+              top: 10,
+              right: 10,
+              // alignment: Alignment.topLeft,
+              child: Container(
+                height: 35,
+                width: 35,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(70),
+                ),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.favorite,
+                    color: Colors.white,
+                    size: 20,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -198,7 +208,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      popular('images/crimson.jpg', 28, 0),
+                      popular(
+                        'images/crimson.jpg',
+                        28,
+                        0,
+                        CrimsonCup(),
+                      ),
                       Padding(
                         padding: const EdgeInsets.all(24.0),
                         child: Row(
@@ -247,10 +262,20 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 140,
                         width: 150,
                       ),
-                      popular('images/pizza.jpg', 40, 10),
+                      popular(
+                        'images/pizza.jpg',
+                        40,
+                        10,
+                        MadChef(),
+                      ),
                     ],
                   ),
-                  popular('images/burger1.jpg', 40, 10),
+                  popular(
+                    'images/burger1.jpg',
+                    40,
+                    10,
+                    KFC(),
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -258,7 +283,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 140,
                         width: 150,
                       ),
-                      popular('images/burger2.jpg', 40, 20),
+                      popular(
+                        'images/burger2.jpg',
+                        40,
+                        20,
+                        FoodContainer(),
+                      ),
                     ],
                   ),
                 ],
