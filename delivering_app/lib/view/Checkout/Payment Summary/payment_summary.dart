@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import 'order.dart';
+import 'order_placed.dart';
 
 class PaymentSummary extends StatefulWidget {
   final DeliveryAddress deliveryAddressList;
@@ -69,14 +70,8 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                 ? Get.to(
                     () => MyRazorpay(),
                   )
-                : Scaffold(
-                    body: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                            'Order placed successfully.\nIt will be delivered to you as soon as possible'),
-                      ],
-                    ),
+                : Get.to(
+                    () => OrderPlaced(),
                   );
           },
           color: primaryColour,
