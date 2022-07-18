@@ -16,7 +16,7 @@ class OrderPlaced extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Order placed successfully.\nIt will be delivered to you as soon as possible',
+              'Order placed successfully.\nIt will be delivered to you as soon as possible.',
               style: TextStyle(
                 fontSize: 20,
               ),

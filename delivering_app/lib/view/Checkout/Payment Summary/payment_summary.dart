@@ -66,6 +66,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
         trailing: MaterialButton(
           child: Text('Place Order'),
           onPressed: () {
+            //Will use if else block later to send the date to Delivery guy
             myAddressType == AddressTypes.OnlinePayment
                 ? Get.to(
                     () => MyRazorpay(),
