@@ -17,6 +17,7 @@ void main() {
   runApp(MyApp());
 }
 
+// this is for payment
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
