@@ -28,6 +28,7 @@ dependencies:
   firebase_core: ^1.17.1
   flutter:
     sdk: flutter
+  flutter_sslcommerz: ^2.1.1-nullsafety.0
   flutter_svg: ^1.1.0
   get: ^4.6.5
   google_maps_flutter: ^2.1.7
