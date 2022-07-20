@@ -1,7 +1,5 @@
-import 'package:delivering_app/controller/Providers/reviewCartProvider.dart';
 import 'package:delivering_app/config/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class ItemCountWidget extends StatefulWidget {
   @override
@@ -26,7 +24,6 @@ class _ItemCountWidgetState extends State<ItemCountWidget> {
 
   @override
   Widget build(BuildContext context) {
-    ReviewCartProvider reviewCartProvider = Provider.of(context);
     return Container(
       height: 35,
       color: primaryColour,

@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:delivering_app/config/constants.dart';
 
 import 'package:delivering_app/view/Review%20Cart/reviewCart.dart';

@@ -66,29 +66,6 @@ class _CountState extends State<ItemCount> {
             });
   }
 
-  // getAddAndQuantity() {
-  //   FirebaseFirestore.instance
-  //       .collection("ReviewCart")
-  //       .doc(FirebaseAuth.instance.currentUser!.uid)
-  //       .collection("YourReviewCart")
-  //       .doc(widget.productId)
-  //       .get()
-  //       .then(
-  //         (value) => {
-  //           if (this.mounted)
-  //             {
-  //               if (value.exists)
-  //                 {
-  //                   setState(() {
-  //                     _counter = value.get("cartQuantity");
-  //                     isTrue = value.get("isAdd");
-  //                   })
-  //                 }
-  //             }
-  //         },
-  //       );
-  // }
-
   @override
   Widget build(BuildContext context) {
     getAddQuantity();

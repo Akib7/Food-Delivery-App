@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class dropDown extends StatefulWidget {
-  const dropDown({
+class Dropdown extends StatefulWidget {
+  const Dropdown({
     Key? key,
   }) : super(key: key);
 
   @override
-  _dropDownState createState() => _dropDownState();
+  _DropdownState createState() => _DropdownState();
 }
 
-class _dropDownState extends State<dropDown> {
+class _DropdownState extends State<Dropdown> {
   String dropdownValue = '8502 Preston Rd. Inglewood';
   String holder = '';
   List<String> locationName = [
@@ -20,7 +20,7 @@ class _dropDownState extends State<dropDown> {
     '1201 Feathers Hooves Drive. City: Syosset'
   ];
 
-  void getDropDownItem() {
+  void getDropdownItem() {
     setState(() {
       holder = dropdownValue;
     });
