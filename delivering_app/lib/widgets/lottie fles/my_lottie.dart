@@ -35,21 +35,6 @@ class _MyLottieState extends State<MyLottie>
       child: Column(
         children: [
           const SizedBox(height: 20),
-          // GestureDetector(
-          //   child: Lottie.network(
-          //     'https://assets3.lottiefiles.com/packages/lf20_xdfeea13.json',
-          //     controller: _controller,
-          //   ),
-          //   onTap: () {
-          //     if (bookmarked == false) {
-          //       bookmarked = true;
-          //       _controller.forward();
-          //     } else {
-          //       bookmarked = false;
-          //       _controller.reverse();
-          //     }
-          //   },
-          // ),
           Lottie.network(
             'https://assets1.lottiefiles.com/packages/lf20_s6neqjx3.json',
           ),
