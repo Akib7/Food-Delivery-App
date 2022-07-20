@@ -139,19 +139,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
-              // Padding(
-              //   padding:
-              //       const EdgeInsets.symmetric(horizontal: 8, vertical: 24),
-              // ),
               CardSwiper(),
-              // dropDown(),
-              // Container(
-              //   height: 150,
-              //   width: 550,
-              //   child: getTabBar(),
-              // ),
               SizedBox(
                 width: 20,
                 height: 20,
