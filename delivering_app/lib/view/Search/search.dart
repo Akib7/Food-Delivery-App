@@ -13,7 +13,6 @@ class SearchBar extends StatefulWidget {
 
 class _SearchBarState extends State<SearchBar> {
   String query = '';
-  @override
   searchItem(String query) {
     List<ProductModel> searchFood = widget.search.where((element) {
       return element.productName.toLowerCase().contains(query);
@@ -78,7 +77,6 @@ class _SearchBarState extends State<SearchBar> {
                 productPrice: data.productPrice,
                 productId: data.productId,
                 productQuantity: 0,
-                
               );
             }).toList(),
           ),

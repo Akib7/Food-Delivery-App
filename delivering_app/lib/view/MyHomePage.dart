@@ -14,8 +14,6 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import '../widgets/card_swiper.dart';
 import 'DetailPage.dart';
-import 'dropDown.dart';
-import 'getTabBar.dart';
 
 class MyHomePage extends StatefulWidget {
   final void Function()? onTap;
