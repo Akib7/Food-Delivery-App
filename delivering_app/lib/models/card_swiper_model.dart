@@ -6,10 +6,10 @@ final List<String> sliderItems = [
   cyberMonday,
   xmas,
 ];
-String elevenEleven = 'images/order.png';
-String blackFriday = 'images/del1.jpg';
-String cyberMonday = 'images/del2.jpg';
-String xmas = 'images/discount.jpg';
+String elevenEleven = 'images/food.jpg';
+String blackFriday = 'images/order.jpg';
+String cyberMonday = 'images/del1.jpg';
+String xmas = 'images/del2.jpg';
 
 class CardSwiperModel extends StatelessWidget {
   final String image;
