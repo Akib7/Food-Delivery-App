@@ -6,7 +6,7 @@ final List<String> sliderItems = [
   cyberMonday,
   xmas,
 ];
-String elevenEleven = 'images/order.jpg';
+String elevenEleven = 'images/order.png';
 String blackFriday = 'images/del1.jpg';
 String cyberMonday = 'images/del2.jpg';
 String xmas = 'images/discount.jpg';

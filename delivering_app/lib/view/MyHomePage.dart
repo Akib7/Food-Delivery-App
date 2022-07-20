@@ -12,6 +12,7 @@ import 'package:delivering_app/widgets/gesturePage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
+import '../widgets/card_swiper.dart';
 import 'DetailPage.dart';
 import 'dropDown.dart';
 import 'getTabBar.dart';
@@ -140,16 +141,17 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             // crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 8, vertical: 24),
-              ),
-              dropDown(),
-              Container(
-                height: 150,
-                width: 550,
-                child: getTabBar(),
-              ),
+              // Padding(
+              //   padding:
+              //       const EdgeInsets.symmetric(horizontal: 8, vertical: 24),
+              // ),
+              CardSwiper(),
+              // dropDown(),
+              // Container(
+              //   height: 150,
+              //   width: 550,
+              //   child: getTabBar(),
+              // ),
               SizedBox(
                 width: 20,
                 height: 20,
