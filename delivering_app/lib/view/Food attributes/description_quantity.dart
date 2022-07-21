@@ -125,11 +125,6 @@ class Description extends StatelessWidget {
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               primary: Colors.red[600],
-
-                              // padding: const EdgeInsets.symmetric(
-                              //   vertical: 1,
-                              //   horizontal: 7,
-                              // ), // foreground
                             ),
                             onPressed: () {},
                             child: Text(
