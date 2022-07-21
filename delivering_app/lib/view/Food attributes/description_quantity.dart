@@ -122,12 +122,20 @@ class Description extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15),
                             color: Colors.red,
                           ),
-                          child: FlatButton(
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.red[600],
+
+                              // padding: const EdgeInsets.symmetric(
+                              //   vertical: 1,
+                              //   horizontal: 7,
+                              // ), // foreground
+                            ),
                             onPressed: () {},
-                            child: Container(
-                              child: Text(
-                                'add to cart',
-                                style: TextStyle(color: Colors.white),
+                            child: Text(
+                              'add to cart',
+                              style: TextStyle(
+                                color: Colors.white,
                               ),
                             ),
                           ),
