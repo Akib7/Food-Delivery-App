@@ -8,10 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ItemCount extends StatefulWidget {
-  String productName;
-  String productImage;
-  String productId;
-  int productPrice;
+  final String productName;
+  final String productImage;
+  final String productId;
+  final int productPrice;
   // var productUnit;
 
   ItemCount({

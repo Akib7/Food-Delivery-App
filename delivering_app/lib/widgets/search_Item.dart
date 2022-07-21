@@ -7,11 +7,11 @@ import 'package:provider/provider.dart';
 
 class SearchItem extends StatefulWidget {
   bool isBool = false;
-  String productImage;
-  String productName;
-  int productPrice;
-  String productId;
-  int productQuantity;
+  final String productImage;
+  final String productName;
+  final int productPrice;
+  final String productId;
+  final int productQuantity;
   Function()? onDelete;
   SearchItem({
     required this.isBool,
