@@ -60,19 +60,38 @@ class _GesturePageState extends State<GesturePage> {
   }
 
   Widget flatButton(Widget page, String text) {
-    return FlatButton(
-      padding: const EdgeInsets.symmetric(
-        vertical: 2,
-        horizontal: 10,
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: Colors.grey[200],
+
+        padding: const EdgeInsets.symmetric(
+          vertical: 1,
+          horizontal: 7,
+        ), // foreground
       ),
       onPressed: () {
         Get.to(() => page);
       },
-      child: Text(text),
-      color: Colors.grey[200],
-      minWidth: 1,
-      height: 30,
+      child: Text(
+        text,
+        style: TextStyle(
+          color: Colors.black,
+        ),
+      ),
     );
+    // FlatButton(
+    //   padding: const EdgeInsets.symmetric(
+    //     vertical: 2,
+    //     horizontal: 10,
+    //   ),
+    //   onPressed: () {
+    //     Get.to(() => page);
+    //   },
+    //   child: Text(text),
+    //   color: Colors.grey[200],
+    //   minWidth: 1,
+    //   height: 30,
+    // );
   }
 
   Widget deliverDet1(String name, double rate) {
