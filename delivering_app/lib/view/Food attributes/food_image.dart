@@ -29,23 +29,21 @@ class FoodImage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      FlatButton(
-                        minWidth: 5,
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: Icon(
+                      IconButton(
+                        icon: Icon(
                           Icons.arrow_back,
                           color: Colors.white.withOpacity(.7),
                         ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                       ),
-                      FlatButton(
-                        minWidth: 3,
-                        onPressed: () {},
-                        child: Icon(
+                      IconButton(
+                        icon: Icon(
                           Icons.add_shopping_cart,
                           color: Colors.white.withOpacity(.7),
                         ),
+                        onPressed: () {},
                       ),
                     ],
                   ),
