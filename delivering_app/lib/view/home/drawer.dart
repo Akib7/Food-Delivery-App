@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DrawerData extends StatefulWidget {
-  late UserProvider userProvider;
+  final UserProvider userProvider;
   DrawerData({Key? key, required this.userProvider}) : super(key: key);
 
   @override

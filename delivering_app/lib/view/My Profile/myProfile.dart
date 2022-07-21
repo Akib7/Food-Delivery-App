@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MyProfile extends StatefulWidget {
-  late UserProvider userProvider;
+  final UserProvider userProvider;
   MyProfile({Key? key, required this.userProvider}) : super(key: key);
 
   @override
