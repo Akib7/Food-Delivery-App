@@ -57,7 +57,12 @@ class _PaymentSummaryState extends State<PaymentSummary> {
         title: Text('Payment Summary'),
       ),
       bottomNavigationBar: ListTile(
-        title: Text('Total Amount'),
+        title: Text(
+          'Total Amount',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         subtitle: Text(
           '\$ ${totalAfterDiscount ?? totalPrice}',
           style: TextStyle(
@@ -116,7 +121,12 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                     );
                   }).toList(),
                   title: Text(
-                      'Order item ${reviewCartProvider.getReviewCartDataList.length}'),
+                    'Order item ${reviewCartProvider.getReviewCartDataList.length}',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
                 ),
                 Divider(),
                 ListTile(
@@ -168,7 +178,12 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                 ),
                 Divider(),
                 ListTile(
-                  title: Text('Payment Options'),
+                  title: Text(
+                    'Payment Options',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
                 RadioListTile(
                   value: AddressTypes.Home,
