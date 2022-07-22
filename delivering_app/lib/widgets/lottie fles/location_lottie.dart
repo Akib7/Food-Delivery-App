@@ -34,7 +34,7 @@ class _LocationLottieState extends State<LocationLottie>
       child: Column(
         children: [
           Lottie.network(
-            'https://assets5.lottiefiles.com/packages/lf20_ymsnjbtq.json',
+            'https://assets5.lottiefiles.com/packages/lf20_ecmllzcp.json',
           ),
         ],
       ),
