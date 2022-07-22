@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
+import '../../../widgets/lottie fles/location_lottie.dart';
+
 class DeliverDetails extends StatefulWidget {
   DeliverDetails({Key? key}) : super(key: key);
 
@@ -75,36 +77,41 @@ class _DeliverDetailsState extends State<DeliverDetails> {
             color: Colors.black45,
           ),
           Column(
-            children: deliveryAdressProvider.getDeliveryAddressDataList
-                .map<Widget>((data) {
-              setState(() {
-                value = data;
-              });
-              return SingleDeliveryAddress(
-                address:
-                    "Area: ${data.area}, Street: ${data.street}, Society: ${data.society}, Pin Code: ${data.pinCode}",
-                title: ("${data.firstName} ${data.lastName}").toUpperCase(),
-                number: 'Phone: ${data.mobileNo}',
-                addressType: data.addressType == "AddressTypes.Home"
-                    ? "Home"
-                    : data.addressType == "AddressTypes.Other"
-                        ? "Other"
-                        : "Work",
-              );
-            }).toList(),
+            children: [
+              Column(
+                children: deliveryAdressProvider.getDeliveryAddressDataList
+                    .map<Widget>((data) {
+                  setState(() {
+                    value = data;
+                  });
+                  return SingleDeliveryAddress(
+                    address:
+                        "Area: ${data.area}, Street: ${data.street}, Society: ${data.society}, Pin Code: ${data.pinCode}",
+                    title: ("${data.firstName} ${data.lastName}").toUpperCase(),
+                    number: 'Phone: ${data.mobileNo}',
+                    addressType: data.addressType == "AddressTypes.Home"
+                        ? "Home"
+                        : data.addressType == "AddressTypes.Other"
+                            ? "Other"
+                            : "Work",
+                  );
+                }).toList(),
 
-            // deliveryAdressProvider.getDeliveryAddressDataList.isEmpty
-            //     ? Container(
-            //         child: Center(
-            //           child: Text('No Data'),
-            //         ),
-            //       )
-            //     : SingleDeliveryAddress(
-            //         address: '14/A East Badda',
-            //         number: '+8801325689654',
-            //         addressType: 'Home',
-            //         title: 'My Address',
-            //       ),
+                // deliveryAdressProvider.getDeliveryAddressDataList.isEmpty
+                //     ? Container(
+                //         child: Center(
+                //           child: Text('No Data'),
+                //         ),
+                //       )
+                //     : SingleDeliveryAddress(
+                //         address: '14/A East Badda',
+                //         number: '+8801325689654',
+                //         addressType: 'Home',
+                //         title: 'My Address',
+                //       ),
+              ),
+              LocationLottie(),
+            ],
           ),
         ],
       ),
