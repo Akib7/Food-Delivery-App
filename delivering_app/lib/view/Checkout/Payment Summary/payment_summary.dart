@@ -39,13 +39,16 @@ class _PaymentSummaryState extends State<PaymentSummary> {
     double? totalAfterDiscount;
     double shippingCost = 3.7;
     double totalPrice = reviewCartProvider.getTotalPrice();
+
     if (totalPrice > 300) {
-      discountPrice = (totalPrice * discount) / 100;
+      discountPrice = ((totalPrice * discount) / 100);
 
       totalAfterDiscount = totalPrice - discountPrice;
     }
     if (totalAfterDiscount != null) {
       totalAfterDiscount = totalAfterDiscount + shippingCost;
+      totalAfterDiscount =
+          double.parse((totalAfterDiscount).toStringAsFixed(2));
     }
 
     return Scaffold(
