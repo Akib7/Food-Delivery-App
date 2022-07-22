@@ -5,6 +5,7 @@ import 'package:delivering_app/widgets/itemCount.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 // enum SinginCharacter { fill, outline }
 
@@ -64,7 +65,10 @@ class _FoodOverviewState extends State<FoodOverview> {
               ),
               Text(
                 title!,
-                style: TextStyle(color: color),
+                style: TextStyle(
+                  color: color,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -139,17 +143,14 @@ class _FoodOverviewState extends State<FoodOverview> {
               title: "Go To Cart",
               iconData: Icons.shop_outlined,
               onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => ReviewCart(),
-                  ),
+                Get.to(
+                  () => ReviewCart(),
                 );
               }),
         ],
       ),
       appBar: AppBar(
         backgroundColor: primaryColour,
-        iconTheme: IconThemeData(color: Colors.black54),
         title: Text(
           "Food Overview",
           style: TextStyle(
