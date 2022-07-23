@@ -180,17 +180,17 @@ class DetailPage extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              FlatButton(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 2,
-                                  horizontal: 10,
-                                ),
-                                onPressed: () {},
-                                child: Text("Burger"),
-                                color: Colors.grey[200],
-                                minWidth: 1,
-                                height: 30,
-                              ),
+                              // FlatButton(
+                              //   padding: const EdgeInsets.symmetric(
+                              //     vertical: 2,
+                              //     horizontal: 10,
+                              //   ),
+                              //   onPressed: () {},
+                              //   child: Text("Burger"),
+                              //   color: Colors.grey[200],
+                              //   minWidth: 1,
+                              //   height: 30,
+                              // ),
                               FlatButton(
                                 padding: const EdgeInsets.symmetric(
                                   vertical: 2,
