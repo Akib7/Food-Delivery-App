@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:delivering_app/config/constants.dart';
 
+import '../../../widgets/lottie fles/online_payment_lottie.dart';
+
 class MyRazorpay extends StatefulWidget {
   const MyRazorpay({Key? key}) : super(key: key);
 
@@ -93,6 +95,7 @@ class _MyRazorpayState extends State<MyRazorpay> {
                 // onPrimary: Colors.yellow, // foreground
               ),
             ),
+            OnlinePaymentLottie(),
           ],
         ),
       ),

@@ -10,8 +10,6 @@ import 'package:provider/provider.dart';
 
 import 'controller/authController.dart';
 
-// import 'package:get/get.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
