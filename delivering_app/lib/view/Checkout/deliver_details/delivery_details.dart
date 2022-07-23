@@ -96,19 +96,6 @@ class _DeliverDetailsState extends State<DeliverDetails> {
                             : "Work",
                   );
                 }).toList(),
-
-                // deliveryAdressProvider.getDeliveryAddressDataList.isEmpty
-                //     ? Container(
-                //         child: Center(
-                //           child: Text('No Data'),
-                //         ),
-                //       )
-                //     : SingleDeliveryAddress(
-                //         address: '14/A East Badda',
-                //         number: '+8801325689654',
-                //         addressType: 'Home',
-                //         title: 'My Address',
-                //       ),
               ),
               LocationLottie(),
             ],
