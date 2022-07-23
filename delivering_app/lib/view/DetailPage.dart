@@ -2,10 +2,44 @@ import 'package:delivering_app/models/CrimsonCup.dart';
 import 'package:delivering_app/models/FoodContainer.dart';
 import 'package:delivering_app/models/KFC.dart';
 import 'package:delivering_app/models/MadChef.dart';
+import 'package:delivering_app/view/food%20items/Mocha.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'food items/Burger.dart';
+import 'food items/Capuccino.dart';
+import 'food items/Chicken.dart';
+import 'food items/Espresso.dart';
+import 'food items/Fastfood.dart';
+import 'food items/FrozenLatte.dart';
+import 'food items/Pasta.dart';
+import 'food items/Pizza.dart';
+import 'food items/Steak.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({Key? key}) : super(key: key);
+
+  Widget flatButton(Widget page, String text) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: Colors.grey[200],
+
+        padding: const EdgeInsets.symmetric(
+          vertical: 1,
+          horizontal: 7,
+        ), // foreground
+      ),
+      onPressed: () {
+        Get.to(() => page);
+      },
+      child: Text(
+        text,
+        style: TextStyle(
+          color: Colors.black,
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -180,39 +214,8 @@ class DetailPage extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              // FlatButton(
-                              //   padding: const EdgeInsets.symmetric(
-                              //     vertical: 2,
-                              //     horizontal: 10,
-                              //   ),
-                              //   onPressed: () {},
-                              //   child: Text("Burger"),
-                              //   color: Colors.grey[200],
-                              //   minWidth: 1,
-                              //   height: 30,
-                              // ),
-                              FlatButton(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 2,
-                                  horizontal: 10,
-                                ),
-                                onPressed: () {},
-                                child: Text("Chicken"),
-                                color: Colors.grey[200],
-                                minWidth: 1,
-                                height: 30,
-                              ),
-                              FlatButton(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 2,
-                                  horizontal: 10,
-                                ),
-                                onPressed: () {},
-                                child: Text("Fastfood"),
-                                color: Colors.grey[200],
-                                minWidth: 1,
-                                height: 30,
-                              ),
+                              flatButton(Chicken(), "Chicken"),
+                              flatButton(Fastfood(), "Fastfood"),
                             ],
                           ),
                           Padding(
@@ -222,17 +225,7 @@ class DetailPage extends StatelessWidget {
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                FlatButton(
-                                  padding: const EdgeInsets.symmetric(
-                                    vertical: 2,
-                                    horizontal: 10,
-                                  ),
-                                  onPressed: () {},
-                                  child: Text("Steak"),
-                                  color: Colors.grey[200],
-                                  minWidth: 1,
-                                  height: 30,
-                                ),
+                                flatButton(Steak(), "Steak"),
                               ],
                             ),
                           ),
@@ -389,39 +382,9 @@ class DetailPage extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              FlatButton(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 2,
-                                  horizontal: 10,
-                                ),
-                                onPressed: () {},
-                                child: Text("Chicken"),
-                                color: Colors.grey[200],
-                                minWidth: 1,
-                                height: 30,
-                              ),
-                              FlatButton(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 2,
-                                  horizontal: 10,
-                                ),
-                                onPressed: () {},
-                                child: Text("Burger"),
-                                color: Colors.grey[200],
-                                minWidth: 1,
-                                height: 30,
-                              ),
-                              FlatButton(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 2,
-                                  horizontal: 10,
-                                ),
-                                onPressed: () {},
-                                child: Text("Fastfood"),
-                                color: Colors.grey[200],
-                                minWidth: 1,
-                                height: 30,
-                              ),
+                              flatButton(Chicken(), "Chicken"),
+                              flatButton(Burger(), "Burger"),
+                              flatButton(Fastfood(), "Fastfood"),
                             ],
                           ),
                           Padding(
@@ -429,17 +392,7 @@ class DetailPage extends StatelessWidget {
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                FlatButton(
-                                  padding: const EdgeInsets.symmetric(
-                                    vertical: 2,
-                                    horizontal: 10,
-                                  ),
-                                  onPressed: () {},
-                                  child: Text("Steak"),
-                                  color: Colors.grey[200],
-                                  minWidth: 1,
-                                  height: 30,
-                                ),
+                                flatButton(Steak(), "Steak"),
                               ],
                             ),
                           ),
@@ -596,39 +549,9 @@ class DetailPage extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              FlatButton(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 2,
-                                  horizontal: 10,
-                                ),
-                                onPressed: () {},
-                                child: Text("Pizza"),
-                                color: Colors.grey[200],
-                                minWidth: 1,
-                                height: 30,
-                              ),
-                              FlatButton(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 2,
-                                  horizontal: 10,
-                                ),
-                                onPressed: () {},
-                                child: Text("Pasta"),
-                                color: Colors.grey[200],
-                                minWidth: 1,
-                                height: 30,
-                              ),
-                              FlatButton(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 2,
-                                  horizontal: 10,
-                                ),
-                                onPressed: () {},
-                                child: Text("Fastfood"),
-                                color: Colors.grey[200],
-                                minWidth: 1,
-                                height: 30,
-                              ),
+                              flatButton(Pizza(), "Pizza"),
+                              flatButton(Pasta(), "Pasta"),
+                              flatButton(Fastfood(), "Fastfood"),
                             ],
                           ),
                           Padding(
@@ -636,17 +559,7 @@ class DetailPage extends StatelessWidget {
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                FlatButton(
-                                  padding: const EdgeInsets.symmetric(
-                                    vertical: 2,
-                                    horizontal: 10,
-                                  ),
-                                  onPressed: () {},
-                                  child: Text("Burger"),
-                                  color: Colors.grey[200],
-                                  minWidth: 1,
-                                  height: 30,
-                                ),
+                                flatButton(Burger(), "Burger"),
                               ],
                             ),
                           ),
@@ -803,39 +716,9 @@ class DetailPage extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              FlatButton(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 2,
-                                  horizontal: 10,
-                                ),
-                                onPressed: () {},
-                                child: Text("Espresso"),
-                                color: Colors.grey[200],
-                                minWidth: 1,
-                                height: 30,
-                              ),
-                              FlatButton(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 2,
-                                  horizontal: 10,
-                                ),
-                                onPressed: () {},
-                                child: Text("Mocha"),
-                                color: Colors.grey[200],
-                                minWidth: 1,
-                                height: 30,
-                              ),
-                              FlatButton(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 2,
-                                  horizontal: 10,
-                                ),
-                                onPressed: () {},
-                                child: Text("Frozen Latte"),
-                                color: Colors.grey[200],
-                                minWidth: 1,
-                                height: 30,
-                              ),
+                              flatButton(Espresso(), "Espresso"),
+                              flatButton(Mocha(), "Mocha"),
+                              flatButton(FrozenLatte(), "Frozen Latte"),
                             ],
                           ),
                           Padding(
@@ -843,17 +726,7 @@ class DetailPage extends StatelessWidget {
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                FlatButton(
-                                  padding: const EdgeInsets.symmetric(
-                                    vertical: 2,
-                                    horizontal: 10,
-                                  ),
-                                  onPressed: () {},
-                                  child: Text("Capuccino"),
-                                  color: Colors.grey[200],
-                                  minWidth: 1,
-                                  height: 30,
-                                ),
+                                flatButton(Capuccino(), "Capuccino"),
                               ],
                             ),
                           ),
