@@ -15,7 +15,8 @@ class SignUPage extends StatefulWidget {
 }
 
 class _SignUPageState extends State<SignUPage> {
-  String name = "", email = "", phone = "";
+  String name = "", email = "", phone = "", typeOfUser = '';
+  TextEditingController typeOfUserText = TextEditingController();
   TextEditingController emailText = TextEditingController();
   TextEditingController nameText = TextEditingController();
   TextEditingController password = TextEditingController();
@@ -43,28 +44,54 @@ class _SignUPageState extends State<SignUPage> {
                     ),
                 Material(
                   child: TextFormField(
-                    controller: nameText,
+                    controller: typeOfUserText,
                     keyboardType: TextInputType.text,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter User name';
+                        return 'Please enter which type of user are you?';
                       }
 
                       return null;
                     },
                     onSaved: (value) {
                       if (value == null || value.isEmpty) {
-                        name = value.toString();
+                        typeOfUser = value.toString();
                       }
                     },
                     decoration: const InputDecoration(
-                      hintText: "User Name",
+                      hintText: "Type of User",
                     ),
                   ),
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: defaultPadding),
+                  padding: const EdgeInsets.only(top: defaultPadding),
+                  child: Material(
+                    child: TextFormField(
+                      controller: nameText,
+                      keyboardType: TextInputType.text,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter User name';
+                        }
+
+                        return null;
+                      },
+                      onSaved: (value) {
+                        if (value == null || value.isEmpty) {
+                          name = value.toString();
+                        }
+                      },
+                      decoration: const InputDecoration(
+                        hintText: "User Name",
+                      ),
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: defaultPadding / 2),
                   child: Material(
                     child: TextFormField(
                       controller: emailText,
@@ -147,6 +174,7 @@ class _SignUPageState extends State<SignUPage> {
                         emailText.text.trim(),
                         password.text.trim(),
                         nameText.text.trim(),
+                        typeOfUserText.text.trim(),
                       );
                     } else {
                       print("Login Unsuccessful");
@@ -189,7 +217,7 @@ class _SignUPageState extends State<SignUPage> {
                 //   ),
                 // ),
                 const Spacer(
-                  flex: 2,
+                  flex: 1,
                 ),
               ],
             ),

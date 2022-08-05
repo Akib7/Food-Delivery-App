@@ -30,7 +30,8 @@ class AuthController extends GetxController {
     }
   }
 
-  void signup(String email, String password, String userName) async {
+  void signup(
+      String email, String password, String userName, String typeOfUser) async {
     try {
       UserCredential result = await auth.createUserWithEmailAndPassword(
         email: email,
@@ -38,7 +39,7 @@ class AuthController extends GetxController {
       );
       User? user = result.user;
 
-      await FirStoreDB.addUser(email, userName);
+      await FirStoreDB.addUser(email, userName, typeOfUser);
     } catch (e) {
       print(e.toString());
     }

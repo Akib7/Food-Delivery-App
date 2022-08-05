@@ -36,7 +36,7 @@ class UserProvider with ChangeNotifier {
       userModel = UserModel(
         email: value.get("email"),
         // userImage: value.get("userImage"),
-        userName: value.get("userName"),
+        userName: value.get("userName"), typeOfUser: value.get("typeOfUser"),
         // userUid: value.get("userUid"),
       );
       currentData = userModel;
