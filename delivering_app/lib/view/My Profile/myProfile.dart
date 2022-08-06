@@ -38,6 +38,7 @@ class _MyProfileState extends State<MyProfile> {
     // if (userData != null) {
     //   userData = userData.currentUserData; // Safe
     // }
+
     return Scaffold(
       backgroundColor: primaryColour,
       appBar: AppBar(

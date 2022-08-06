@@ -34,6 +34,8 @@ class _DrawerState extends State<DrawerData> {
   Widget build(BuildContext context) {
     var userData = widget.userProvider.currentUserData;
 
+    // final userName = userData != null ? userData.userName : '';
+
     return Row(
       children: [
         Drawer(
