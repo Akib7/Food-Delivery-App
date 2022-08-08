@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:delivering_app/Constants/firebase_auth_constants.dart';
 
 import 'package:delivering_app/helper/firestore_db.dart';
@@ -7,9 +6,6 @@ import 'package:delivering_app/view/loginAndSignUp/WelcomePage.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-
-import '../models/user_model.dart';
-import '../view/food items/Burger.dart';
 
 class AuthController extends GetxController {
   // UserProvider userProvider = Provider.of<UserProvider>(context);
@@ -24,28 +20,28 @@ class AuthController extends GetxController {
   //       .get();
   // }
 
-  late UserModel currentData;
+  // late UserModel currentData;
 
-  void getUserData() async {
-    UserModel userModel;
-    var value = await FirebaseFirestore.instance
-        .collection("users")
-        .doc(FirebaseAuth.instance.currentUser!.uid)
-        .get();
-    if (value.exists) {
-      userModel = UserModel(
-        email: value.get("email"),
-        // userImage: value.get("userImage"),
-        userName: value.get("userName"), typeOfUser: value.get("typeOfUser"),
-        // userUid: value.get("userUid"),
-      );
-      currentData = userModel;
-    }
-  }
+  // void getUserData() async {
+  //   UserModel userModel;
+  //   var value = await FirebaseFirestore.instance
+  //       .collection("users")
+  //       .doc(FirebaseAuth.instance.currentUser!.uid)
+  //       .get();
+  //   if (value.exists) {
+  //     userModel = UserModel(
+  //       email: value.get("email"),
+  //       // userImage: value.get("userImage"),
+  //       userName: value.get("userName"), typeOfUser: value.get("typeOfUser"),
+  //       // userUid: value.get("userUid"),
+  //     );
+  //     currentData = userModel;
+  //   }
+  // }
 
-  UserModel get currentUserData {
-    return currentData;
-  }
+  // UserModel get currentUserData {
+  //   return currentData;
+  // }
 
   String? user = FirebaseAuth.instance.currentUser!.uid;
 
@@ -60,13 +56,15 @@ class AuthController extends GetxController {
   _setIntializeScreen(User? user) {
     if (user == null) {
       Get.offAll(() => WelcomePage());
-    } else if (currentData.typeOfUser == 'Admin') {
+    } else {
+      // if (currentUserData.typeOfUser == 'Admin')
       Get.offAll(() => MyHomePage(
             onTap: () {},
           ));
-    } else if (currentData.typeOfUser == 'Customer') {
-      Get.offAll(() => Burger());
     }
+    // else if (currentUserData.typeOfUser == 'Customer') {
+    //   Get.offAll(() => Burger());
+    // }
   }
 
   void signup(
