@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:delivering_app/Constants/firebase_auth_constants.dart';
 
 import 'package:delivering_app/helper/firestore_db.dart';
@@ -7,10 +8,46 @@ import 'package:delivering_app/view/loginAndSignUp/WelcomePage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
+import '../models/user_model.dart';
+import '../view/food items/Burger.dart';
+
 class AuthController extends GetxController {
   // UserProvider userProvider = Provider.of<UserProvider>(context);
   late Rx<User?> firebaseUser;
   static AuthController instance = Get.find<AuthController>();
+
+  // void getUserType() async {
+  //   QuerySnapshot type = await FirebaseFirestore.instance
+  //       .collection('users')
+  //       .doc(FirebaseAuth.instance.currentUser!.uid)
+  //       .collection('typeOfUser')
+  //       .get();
+  // }
+
+  late UserModel currentData;
+
+  void getUserData() async {
+    UserModel userModel;
+    var value = await FirebaseFirestore.instance
+        .collection("users")
+        .doc(FirebaseAuth.instance.currentUser!.uid)
+        .get();
+    if (value.exists) {
+      userModel = UserModel(
+        email: value.get("email"),
+        // userImage: value.get("userImage"),
+        userName: value.get("userName"), typeOfUser: value.get("typeOfUser"),
+        // userUid: value.get("userUid"),
+      );
+      currentData = userModel;
+    }
+  }
+
+  UserModel get currentUserData {
+    return currentData;
+  }
+
+  String? user = FirebaseAuth.instance.currentUser!.uid;
 
   @override
   void onReady() {
@@ -23,10 +60,12 @@ class AuthController extends GetxController {
   _setIntializeScreen(User? user) {
     if (user == null) {
       Get.offAll(() => WelcomePage());
-    } else {
+    } else if (currentData.typeOfUser == 'Admin') {
       Get.offAll(() => MyHomePage(
             onTap: () {},
           ));
+    } else if (currentData.typeOfUser == 'Customer') {
+      Get.offAll(() => Burger());
     }
   }
 
