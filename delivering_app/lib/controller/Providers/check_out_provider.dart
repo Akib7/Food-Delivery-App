@@ -20,106 +20,40 @@ class CheckoutProvider with ChangeNotifier {
   TextEditingController pinCode = TextEditingController();
   LocationData? setLocation;
 
+  getSnackBar(String text) {
+    return Get.snackbar(
+      'Denied',
+      text,
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: primaryColour,
+      colorText: Colors.white,
+      margin: EdgeInsets.all(15),
+    );
+  }
+
   void validator(myType) async {
     if (firstName.text.isEmpty) {
-      Get.snackbar(
-        'Denied',
-        'First Name is empty',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: primaryColour,
-        colorText: Colors.white,
-        margin: EdgeInsets.all(15),
-      );
+      getSnackBar('First Name is empty');
     } else if (lastName.text.isEmpty) {
-      Get.snackbar(
-        'Denied',
-        'Last Name is empty',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: primaryColour,
-        colorText: Colors.white,
-        margin: EdgeInsets.all(15),
-      );
+      getSnackBar('Last Name is empty');
     } else if (mobileNo.text.isEmpty) {
-      Get.snackbar(
-        'Denied',
-        'Mobile No. is empty',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: primaryColour,
-        colorText: Colors.white,
-        margin: EdgeInsets.all(15),
-      );
+      getSnackBar('Mobile No. is empty');
     } else if (alternativeMobileNo.text.isEmpty) {
-      Get.snackbar(
-        'Denied',
-        'Alternative Mobile No. is empty',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: primaryColour,
-        colorText: Colors.white,
-        margin: EdgeInsets.all(15),
-      );
+      getSnackBar('Alternative Mobile No. is empty');
     } else if (society.text.isEmpty) {
-      Get.snackbar(
-        'Denied',
-        'Society is empty',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: primaryColour,
-        colorText: Colors.white,
-        margin: EdgeInsets.all(15),
-      );
+      getSnackBar('Society is empty');
     } else if (street.text.isEmpty) {
-      Get.snackbar(
-        'Denied',
-        'Street is empty',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: primaryColour,
-        colorText: Colors.white,
-        margin: EdgeInsets.all(15),
-      );
+      getSnackBar('Street is empty');
     } else if (landmark.text.isEmpty) {
-      Get.snackbar(
-        'Denied',
-        'Landmark is empty',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: primaryColour,
-        colorText: Colors.white,
-        margin: EdgeInsets.all(15),
-      );
+      getSnackBar('Landmark is empty');
     } else if (city.text.isEmpty) {
-      Get.snackbar(
-        'Denied',
-        'City is empty',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: primaryColour,
-        colorText: Colors.white,
-        margin: EdgeInsets.all(15),
-      );
+      getSnackBar('City is empty');
     } else if (area.text.isEmpty) {
-      Get.snackbar(
-        'Denied',
-        'Area is empty',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: primaryColour,
-        colorText: Colors.white,
-        margin: EdgeInsets.all(15),
-      );
+      getSnackBar('Area is empty');
     } else if (pinCode.text.isEmpty) {
-      Get.snackbar(
-        'Denied',
-        'PinCode is empty',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: primaryColour,
-        colorText: Colors.white,
-        margin: EdgeInsets.all(15),
-      );
+      getSnackBar('PinCode is empty');
     } else if (setLocation == null) {
-      Get.snackbar(
-        'Denied',
-        'Location is empty',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: primaryColour,
-        colorText: Colors.white,
-        margin: EdgeInsets.all(15),
-      );
+      getSnackBar('Location is empty');
     }
     // else if (setLocation.text.isEmpty) {
     //   Get.snackbar(
