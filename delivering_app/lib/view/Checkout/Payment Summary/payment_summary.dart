@@ -34,7 +34,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
     ReviewCartProvider reviewCartProvider = Provider.of(context);
     reviewCartProvider.getReviewCartData();
 
-    double discount = 30;
+    double discount = 0;
     double? discountPrice;
     double? totalAfterDiscount;
     double shippingCost = 3.7;

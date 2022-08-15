@@ -11,7 +11,6 @@ import 'package:get/get.dart';
 import '../view/food items/Burger.dart';
 
 class AuthController extends GetxController {
-  // UserProvider userProvider = Provider.of<UserProvider>(context);
   late Rx<User?> firebaseUser;
   static AuthController instance = Get.find<AuthController>();
 
@@ -28,14 +27,6 @@ class AuthController extends GetxController {
     print(typeOfUser);
   }
 
-  // getData() {
-  //   FirebaseAuth.instance.authStateChanges().listen((User? user) {
-  //     if (user != null) {
-  //       print(user.metadata);
-  //     }
-  //   });
-  // }
-
   @override
   void onReady() {
     super.onReady();
@@ -49,11 +40,9 @@ class AuthController extends GetxController {
     if (user == null) {
       Get.offAll(() => WelcomePage());
     } else if (typeOfUser == 'Admin') {
-      // if (currentUserData.typeOfUser == 'Admin')
       Get.offAll(() => MyHomePage(
             onTap: () {},
           ));
-      // getUserData();
     } else if (typeOfUser == 'Customer') {
       Get.offAll(() => Burger());
     }
@@ -62,11 +51,11 @@ class AuthController extends GetxController {
   void signup(
       String email, String password, String userName, String typeOfUser) async {
     try {
-      UserCredential result = await auth.createUserWithEmailAndPassword(
+      await auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
-      User? user = result.user;
+      // User? user = result.user;
 
       await FirStoreDB.addUser(email, userName, typeOfUser);
     } catch (e) {
@@ -76,11 +65,11 @@ class AuthController extends GetxController {
 
   void login(String email, String password) async {
     try {
-      UserCredential result = await auth.signInWithEmailAndPassword(
+      await auth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
-      User? user = result.user;
+      // User? user = result.user;
     } catch (e) {
       print(e.toString());
     }

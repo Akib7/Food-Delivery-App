@@ -3,8 +3,8 @@ import 'package:delivering_app/controller/Providers/reviewCartProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-// import 'package:fluttertoast/fluttertoast.dart';
 
+// ignore: must_be_immutable
 class SearchItem extends StatefulWidget {
   bool isBool = false;
   final String productImage;

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class ReviewCart extends StatelessWidget {
   late ReviewCartProvider reviewCartProvider;
   ReviewCart({Key? key}) : super(key: key);
