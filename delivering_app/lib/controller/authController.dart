@@ -37,6 +37,7 @@ class AuthController extends GetxController {
   }
 
   _setIntializeScreen(User? user) {
+    // getUserData();
     if (user == null) {
       Get.offAll(() => WelcomePage());
     } else if (typeOfUser == 'Admin') {
@@ -44,7 +45,7 @@ class AuthController extends GetxController {
             onTap: () {},
           ));
     } else if (typeOfUser == 'Customer') {
-      Get.offAll(() => Burger());
+      Get.to(() => Burger());
     }
   }
 
