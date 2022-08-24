@@ -34,6 +34,8 @@ class _PaymentSummaryState extends State<PaymentSummary> {
     ReviewCartProvider reviewCartProvider = Provider.of(context);
     reviewCartProvider.getReviewCartData();
 
+    List<String> deliveryList = [];
+
     double discount = 0;
     double? discountPrice;
     double? totalAfterDiscount;
@@ -79,9 +81,13 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                 ? Get.to(
                     () => MyRazorpay(),
                   )
-                : Get.to(
-                    () => OrderPlaced(),
+                : deliveryList.add(
+                    ("${widget.deliveryAddressList.firstName} ${widget.deliveryAddressList.lastName}")
+                        .toUpperCase(),
                   );
+            Get.to(
+              () => OrderPlaced(),
+            );
           },
           color: primaryColour,
           textColor: Colors.white,
