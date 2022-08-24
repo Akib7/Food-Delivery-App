@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../config/constants.dart';
+
 class DeliveryGuy extends StatefulWidget {
   DeliveryGuy({Key? key}) : super(key: key);
 
@@ -12,6 +14,7 @@ class _DeliveryGuyState extends State<DeliveryGuy> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: primaryColour,
         title: Text('Delivery'),
       ),
     );

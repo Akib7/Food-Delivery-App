@@ -8,6 +8,7 @@ import 'package:delivering_app/view/loginAndSignUp/WelcomePage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
+import '../view/actors/delivery_guy.dart';
 import '../view/food items/Burger.dart';
 
 class AuthController extends GetxController {
@@ -46,6 +47,8 @@ class AuthController extends GetxController {
           ));
     } else if (typeOfUser == 'Customer') {
       Get.to(() => Burger());
+    } else if (typeOfUser == 'Delivery Guy') {
+      Get.to(() => DeliveryGuy());
     }
   }
 
