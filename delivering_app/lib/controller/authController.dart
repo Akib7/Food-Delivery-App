@@ -30,14 +30,14 @@ class AuthController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    getUserData();
+    // getUserData();
     firebaseUser = Rx<User?>(auth.currentUser);
     firebaseUser.bindStream(auth.userChanges());
     ever(firebaseUser, _setIntializeScreen);
   }
 
-  _setIntializeScreen(User? user) {
-    // getUserData();
+  _setIntializeScreen(User? user) async {
+    await getUserData();
     if (user == null) {
       Get.offAll(() => WelcomePage());
     } else if (typeOfUser == 'Admin') {
