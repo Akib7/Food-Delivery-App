@@ -104,10 +104,6 @@ class _SearchItemState extends State<SearchItem> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Image.network(widget.productImage),
-                        // Image(
-                        //   fit: BoxFit.cover,
-                        //   image: AssetImage('images/burger1.jpg'),
-                        // ),
                       ),
                     ),
                   ),
